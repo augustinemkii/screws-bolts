@@ -1,10 +1,10 @@
 The Introduction, from scratch how we are doing it?
 we write some simple code in c with the help of replit/visualstudiocode, once we are sure that the code is working,
-confirming that, we jump right into a compilation of the code.
-now what/why/how of the compile and the whole process associated with it right up to the point where we have finished product article Ie. a Portable Executable(PE) the .exe file is covered here.
+confirming that, we jump right into a compilation of the code making the executable of the source code and reversing the same, and interpreting the assembly equivalent of our high-level code getting the sense of each assembly code, finding the pattern
+now what/why/how of the compilation and the other processes associated with it right up to the point where we have finished product article Ie. a Portable Executable(PE) the .exe file is covered here.
 
 
-What is the compilation? compilation is the process made of 4 steps to be precise however, under the hood lot of things happen,
+What is the compilation? compilation is a process made of 4 steps to be precise, however under the hood lot of things happen,
 nonetheless, those 4 steps are 1. Preprocessing 2. Compilation 3. Assembly 4. Linking succinct descriptions of all is given below,
 
 what is preprocessing: (notatallmain.c)
@@ -22,12 +22,16 @@ third falls in-line is Assembly of the code: (notatallmain.s)
 though its name is assembly, the assembly equivalent of the source code has been converted to, in the previous step of compilation itself 
 here assembly code is converted into the machine code in the form of object (.o) file, for the gcc compiler the as.exe is the responsible process for performing this step.
 
-and the last but not least is Linking: (notatallmain.exe)
+and last but not least is Linking: (notatallmain.exe)
 
-linking as the name suggests does the task of linking the user given libraries to the executable file these libraries may include the files with extensions .o, .lib, .dll etc.
-this is done using the ld.exe (in case of the gcc compiler) it is to be noted that the linking using the ld command/ld.exe is the manual linking as such, the linker expects from you the libraries to link to the final .exe rather than finding it by itself like gcc does. as such if you are linking manually be ready to get haunted from the lot of errors.
+linking as the name suggests does the task of linking the user-given libraries to the executable file these libraries may include the files with extensions .o, .lib, .dll etc.
+this is done using the ld.exe (in case of the gcc compiler) it is to be noted that the linking using the ld command/ld.exe is the manual linking as such, the linker expects from you the libraries to link to the final .exe rather than finding them for you by itself like gcc does. as such if you are linking manually be ready to get haunted from the lot of errors.
 
-thus now we have the end product that is the executable.
+thus now we have the end product that is an executable now comes the task of reversing the same and the use of right tool for it, we have host of multiple tools such as IDA, Ghidra, etc. 
+i won't dwell in explaining the greatness of them, only thing is use what have you just be expert in that.
+
+I am using Ghidra, post analyzing the executable file we can start with complete dissection of the file, its Headers and all,
+the section called ".text" is of particular interest to us as it contains all executable instructions and lines of code, 
 
 
 
