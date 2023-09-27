@@ -1,0 +1,45 @@
+The Introduction, from scratch how we are doing it?
+we write some simple code in c with the help of replit/visualstudiocode, once we are sure that the code is working,
+confirming that, we jump right into a compilation of the code making the executable of the source code and reversing the same, and interpreting the assembly equivalent of our high-level code getting the sense of each assembly code, finding the pattern
+now what/why/how of the compilation and the other processes associated with it right up to the point where we have finished product article Ie. a Portable Executable(PE) the .exe file is covered here.
+
+
+What is the compilation? compilation is a process made of 4 steps to be precise, however under the hood lot of things happen,
+nonetheless, those 4 steps are 1. Preprocessing 2. Compilation 3. Assembly 4. Linking succinct descriptions of all is given below,
+
+what is preprocessing: (notatallmain.c)
+
+Basically, it is the house cleaning process and making pre-arrangements before the grand thing of making an executable. Ie. it removes the stuff that is present in the source code which may be introduced by humans for their mutual understanding but insignificant for the machine/compiler, e.g. removing comments
+adding up of the header files this are required for the proper init of the function involved in the source code, as machine needs to be prep up with what requires ahead for the uninterrupted execution of the program
+
+Second in-line is the compilation process: (notatallmain.i)
+
+Compilers are the ones that allow us to write the programs in high-level easily understandable language however, machines don't know how to read high-level language thus compiler jumps in here to convert the high-level code into the assembly code which can be effectively processed by the machine.
+it optimizes the code using optimization algorithms unique to the types of compilers. thus making the program smaller and much faster.
+
+third falls in-line is Assembly of the code: (notatallmain.s)
+
+though its name is assembly, the assembly equivalent of the source code has been converted to, in the previous step of compilation itself 
+here assembly code is converted into the machine code in the form of object (.o) file, for the gcc compiler the as.exe is the responsible process for performing this step.
+
+and last but not least is Linking: (notatallmain.exe)
+
+linking as the name suggests does the task of linking the user-given libraries to the executable file these libraries may include the files with extensions .o, .lib, .dll etc.
+this is done using the ld.exe (in case of the gcc compiler) it is to be noted that the linking using the ld command/ld.exe is the manual linking as such, the linker expects from you the libraries to link to the final .exe rather than finding them for you by itself like gcc does. as such if you are linking manually be ready to get haunted from the lot of errors.
+
+Shifting gears to REVERSE:
+
+
+thus now we have the end product that is an executable now comes the task of reversing the same and the use of right tool for it, we have host of multiple tools such as IDA, Ghidra, etc. 
+i won't dwell in explaining the greatness of them, only thing is, use what have you, just be an expert in that.
+
+I am using Ghidra, post analyzing the executable file we can start with a complete dissection of the file, its Headers and all,
+the section called ".text" is of particular interest to us as it contains all executable instructions and lines of code, 
+among others, the most juicy things lie here.
+
+moreover, there's a section in the Ghidra called the "symbol tree" where the imports, exports, and functions etc. the ancillary stuff of the executable are populated.
+this section is easy to navigate to, should you fall need for navigating to a particular section of the code this section is perfect as this section can be referenced back to its assembly listings.
+
+thats too much of talking now lets jump into the practical stuff.
+
+ 
