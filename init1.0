@@ -27,12 +27,19 @@ and last but not least is Linking: (notatallmain.exe)
 linking as the name suggests does the task of linking the user-given libraries to the executable file these libraries may include the files with extensions .o, .lib, .dll etc.
 this is done using the ld.exe (in case of the gcc compiler) it is to be noted that the linking using the ld command/ld.exe is the manual linking as such, the linker expects from you the libraries to link to the final .exe rather than finding them for you by itself like gcc does. as such if you are linking manually be ready to get haunted from the lot of errors.
 
+Shifting gears to REVERSE:
+
+
 thus now we have the end product that is an executable now comes the task of reversing the same and the use of right tool for it, we have host of multiple tools such as IDA, Ghidra, etc. 
-i won't dwell in explaining the greatness of them, only thing is use what have you just be expert in that.
+i won't dwell in explaining the greatness of them, only thing is, use what have you, just be an expert in that.
 
-I am using Ghidra, post analyzing the executable file we can start with complete dissection of the file, its Headers and all,
+I am using Ghidra, post analyzing the executable file we can start with a complete dissection of the file, its Headers and all,
 the section called ".text" is of particular interest to us as it contains all executable instructions and lines of code, 
+among others, the most juicy things lie here.
 
+moreover, there's a section in the Ghidra called the "symbol tree" where the imports, exports, and functions etc. the ancillary stuff of the executable are populated.
+this section is easy to navigate to, should you fall need for navigating to a particular section of the code this section is perfect as this section can be referenced back to its assembly listings.
 
+thats too much of talking now lets jump into the practical stuff.
 
  
