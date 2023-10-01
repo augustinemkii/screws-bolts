@@ -15,5 +15,5 @@
 .text:000000010040109C                 mov     eax, 0          ; this is the return value of the function being saved in the register EAX as per the _cdecl calling convention rules.
 .text:00000001004010A1                 add     rsp, 20h        ; de-allocating the 32bytes from the stack, esp now pointing at the contents of base pointer saved by instruction in prologue.
 .text:00000001004010A5                 pop     rbp             ; poping whatever rsp pointing at in current situation rsp is pointing at memory location of the previous value saved on the stack.
-.text:00000001004010A6                 retn
+.text:00000001004010A6                 retn                    ; return the execution control flow to the caller
 .text:00000001004010A6 f               endp
